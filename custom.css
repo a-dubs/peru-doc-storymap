@@ -1,0 +1,14 @@
+.vco-text-content p {
+    padding: 5px 0;
+    font-size: 22px;
+    color: #222;
+}
+.vco-headline {
+    /* text-align: center; */
+    padding-top: 10px;
+}
+
+.vco-caption {
+    font-size: 16px !important;
+    padding-bottom: 5px;
+}

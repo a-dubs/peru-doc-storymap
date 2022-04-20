@@ -1,0 +1,149 @@
+<!-- RESOURCES  -->
+<!-- https://www.tutsmake.com/get-latitude-and-longitude-from-address-google-geocode-api-jquery-javascript/ -->
+
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title></title>   
+        <!-- Your script tags should be placed before the closing body tag. -->
+        <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
+        <script type="text/javascript" src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
+        <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+        <link rel="stylesheet" href="custom.css">
+
+    </head>
+
+
+<body>
+
+
+<div id="mapdiv" style="width: 100%; height: 97vh;"></div>
+
+
+<script>
+// storymap_data can be an URL or a Javascript object
+// var storymap_data = '/static/demo/demo.json';
+var storymap_data = {
+    width: 1280,                // required for embed tool; width of StoryMap
+    height: 800,               // required for embed tool; height of StoryMap
+    // font_css: string,              // optional; font set
+    calculate_zoom: true,              // optional; defaults to true.
+    storymap: {
+        language: "en",          // required; two-letter ISO language code
+        map_type: "https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",          // required
+        map_as_image: false,       // required
+        // map_subdomains: "https://stamen-tiles-b.a.ssl.fastly.net",    // optional
+        slides: [
+            {
+                type: "overview",      // optional; if present must be set to "overview"
+                text: {                
+                    headline: "Dialogo a Peru",
+                    text: ""     
+                },
+                media: {            
+                    url: "https://www.rssc.com/sites/default/files/Lima-Callao-Peru_Hero_Mobile.jpg",     
+                    caption: "Lima, Peru",   
+                    
+                }
+            }, 
+
+
+            {
+                location: {           
+                    lat: -12.023122,     
+                    lon: -77.108281     
+                },
+                text: {                
+                    headline: "Jose Chavez International Airport (LIM)",
+                    text: "Jorge Chávez International Airport is Peru's main international and domestic airport. It is located in Callao, 11 kilometers (7 mi) northwest from Lima Center, the nation's capital city and 17 km from the district of Miraflores. During 2017, the airport served 22,025,704 passengers. It serves as a hub for many aviation companies. The airport was named after Peruvian aviator Jorge Chávez (1887–1910)."  
+                },
+                media: {              
+                    url: "https://www.peruforless.com/blog/wp-content/uploads/2019/08/lima-airport.jpg",      
+                    // caption: string,   
+                }
+            }, 
+
+
+            {
+                location: {     
+                    lat: -12.023122,      
+                    lon: -77.108281       
+                },
+                text: {                
+                    headline: "Un Recorridito y Vistazo del Jose Chavez Aeropuerto",
+                    text: "Un corto video pa que puedes tener una idea de que verás en el aeropuerto!"
+                },
+                media: {               
+                    url: "https://www.youtube.com/watch?v=5PZP4Oxnhqw",   
+                        
+                }
+            }, 
+            
+
+            {
+                location: {     
+                    lat: -12.023122,      
+                    lon: -77.108281       
+                },
+                text: {                
+                    headline: "Como Navegarse por el Jose Chavez Aeropuerto Despues de Aterrizar en el Avión",
+                    text:  "Mira este video para aprender como necesitas andarte despues de aterrizar en el avión."
+                },
+                media: {               
+                    url: "https://www.youtube.com/watch?v=8-kIo662RDA",       
+                }
+            }, 
+
+
+            {
+                location: {          
+                    lat: -12.129114, 
+                    lon: -77.008030
+                },
+                text: {        
+                    headline: "El Hotel Casa Andina en Av. Benavides, Miraflores",
+                    text: "Toma una hora en coche desde el Aeropuerto"
+                },
+                media: {               
+                    url: "casa andina standard benavides exterior.jpg",       
+                    caption: "El Exterior del Hotel Casa Andina en Benavides",   
+                    credit: ""
+                }
+            }, 
+
+            // {
+            //     location: {          
+            //         lat: , 
+            //         lon: 
+            //     },
+            //     text: {        
+            //         headline: "",
+            //         text: ""
+            //     },
+            //     media: {               
+            //         url: "",       
+            //         caption: "",   
+            //         credit: ""
+            //     }
+            // }, 
+
+        ]
+        
+
+        
+    }
+}
+
+// certain settings must be passed within a separate options object
+var storymap_options = {};
+
+var storymap = new KLStoryMap.StoryMap('mapdiv', storymap_data, storymap_options);
+window.onresize = function(event) {
+    storymap.updateDisplay(); // this isn't automatic
+}
+
+
+</script>
+
+</body>
+</html>
