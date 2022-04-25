@@ -1,4 +1,4 @@
-.vco-text-content p {
+.vco-text-content p, .vco-text-content li{
     padding: 5px 0;
     font-size: 22px;
     color: #222;
