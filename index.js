@@ -9,12 +9,17 @@
 $(function() {
     var len = $(".vco-text-content").length;
     console.log("# of slides: "+ len)
-    for (i=0; i < len; i ++)
+    
+    if ($($(".vco-text-content")[0]).html().includes("vco-emoji emjundefined"))
     {
-        // console.log($(".vco-text-content")[i])
-        // console.log($(".vco-text-content")[i].textContent);
-        var txt = $(".vco-text-content")[i].textContent;
-
-        $($(".vco-text-content")[i]).empty().html(txt);
+        console.log("FIXING BROKEN BS");
+        for (i=0; i < len; i ++)
+        {
+            // console.log($(".vco-text-content")[i])
+            // console.log($(".vco-text-content")[i].textContent);
+            var txt = $(".vco-text-content")[i].textContent;
+    
+            $($(".vco-text-content")[i]).empty().html(txt);
+        }
     }
 });
