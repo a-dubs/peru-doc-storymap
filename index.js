@@ -6,20 +6,3 @@
 // console.log(txt);
 // document.getElementsByClassName("vco-text-content-container")[0].childNodes[2].textContent = "hello";
 
-$(function() {
-    var len = $(".vco-text-content").length;
-    console.log("# of slides: "+ len)
-    
-    if ($($(".vco-text-content")[0]).html().includes("vco-emoji emjundefined"))
-    {
-        console.log("FIXING BROKEN BS");
-        for (i=0; i < len; i ++)
-        {
-            // console.log($(".vco-text-content")[i])
-            // console.log($(".vco-text-content")[i].textContent);
-            var txt = $(".vco-text-content")[i].textContent;
-    
-            $($(".vco-text-content")[i]).empty().html(txt);
-        }
-    }
-});

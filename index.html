@@ -870,7 +870,27 @@ window.onresize = function(event) {
 
 
 </script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="index.js"></script>
+
+<script>
+    $(function() {
+    var len = $(".vco-text-content").length;
+    console.log("# of slides: "+ len)
+    
+    if ($($(".vco-text-content")[0]).html().includes("vco-emoji emjundefined"))
+    {
+        console.log("FIXING BROKEN BS");
+        for (i=0; i < len; i ++)
+        {
+            // console.log($(".vco-text-content")[i])
+            // console.log($(".vco-text-content")[i].textContent);
+            var txt = $(".vco-text-content")[i].textContent;
+    
+            $($(".vco-text-content")[i]).empty().html(txt);
+        }
+    }
+});
+</script>
 </body>
 </html>
